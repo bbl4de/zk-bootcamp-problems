@@ -51,7 +51,7 @@ A = np.array([[1, 1], [1, 4]])
 # Easier way usign numpy
 A_inv = np.linalg.inv(A)
 
-assert(np.allclose((A @ A_inv) % p, np.eye(2)))
+assert(np.allclose((A @ A_inv) % p, np.identity(2)))
 
 # Intended way from the homework - inverse of the determinent times the adjugate of the matrix
 det_A = ((1 * 4 ) % p - (1 * 1 ) % p) % p
@@ -62,4 +62,4 @@ A_adjugate = np.array([[4, -1], [-1, 1]])
 
 A_inverse_manual = np.array([[4 * det_A_inv % p, -1 * det_A_inv % p],
                               [-1 * det_A_inv % p, 1 * det_A_inv % p]])
-assert(np.allclose((A @ A_inverse_manual) % p, np.eye(2)))
+assert(np.allclose((A @ A_inverse_manual) % p, np.identity(2)))
